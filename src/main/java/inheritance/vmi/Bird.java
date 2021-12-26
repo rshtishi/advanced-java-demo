@@ -1,4 +1,4 @@
-package inheritance.example1.vmi;
+package inheritance.vmi;
 
 public class Bird extends Animal {
 

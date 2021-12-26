@@ -1,4 +1,4 @@
-package inheritance.example1;
+package inheritance;
 
 public abstract class HeavyAnimal {
 }

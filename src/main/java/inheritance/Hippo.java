@@ -1,4 +1,4 @@
-package inheritance.example1;
+package inheritance;
 
 public class Hippo extends HeavyAnimal {
 }

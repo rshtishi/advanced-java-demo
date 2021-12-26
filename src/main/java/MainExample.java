@@ -1,6 +1,6 @@
-import inheritance.example1.Elephant;
-import inheritance.example1.HeavyAnimal;
-import inheritance.example1.Hippo;
+import inheritance.Elephant;
+import inheritance.HeavyAnimal;
+import inheritance.Hippo;
 
 public class MainExample {
 

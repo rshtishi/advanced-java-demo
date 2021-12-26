@@ -1,4 +1,4 @@
-package inheritance.example1.override;
+package inheritance.override;
 
 public class OverridingExample {
 
