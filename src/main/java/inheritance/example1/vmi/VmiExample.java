@@ -9,6 +9,8 @@ public class VmiExample {
     }
 
     public static void feed(Animal animal){
+        animal.printName();
         animal.feed();
+        System.out.println();
     }
 }
