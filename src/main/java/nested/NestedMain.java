@@ -11,6 +11,20 @@ public class NestedMain {
         Outer.Inner inner = outer.new Inner();
         inner.go();
 
-        System.out.println(outer.calculate(2));
+        System.out.println();
+
+        System.out.println(outer.callLocalInner(2));
+
+        System.out.println();
+
+        System.out.println(outer.callLocalInnerAnonymous(5.0,1.0));
+
+        Outer.StaticInner staticInner = new Outer.StaticInner();
+        staticInner.print();
+
+        System.out.println();
+    }
+
+    private static class StaticInner {
     }
 }

@@ -15,12 +15,22 @@ public class Outer {
         }
     }
 
+    public static class StaticInner {
+
+        String name = "Rando";
+
+        public void print() {
+            String greeting = (new Outer()).greeting;
+            System.out.println(greeting + " " + name);
+        }
+    }
+
     public void callInner() {
         Inner inner = new Inner();
         inner.go();
     }
 
-    public int calculate(int exp) {
+    public int callLocalInner(int exp) {
         int base = 5;
         class LocalInner {
             public int power() {
@@ -33,6 +43,20 @@ public class Outer {
         }
         LocalInner localInner = new LocalInner();
         return localInner.power();
+    }
+
+    public double callLocalInnerAnonymous(double price, double feeAmount) {
+        Fee fee = new Fee() {
+            @Override
+            public double apply(double amount) {
+                return price + amount;
+            }
+        };
+        return fee.apply(feeAmount);
+    }
+
+    public String getGreeting(){
+        return greeting;
     }
 
 
