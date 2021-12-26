@@ -2,7 +2,7 @@ import inheritance.example1.Elephant;
 import inheritance.example1.HeavyAnimal;
 import inheritance.example1.Hippo;
 
-public class App {
+public class MainExample {
 
     public static void main(String[] args){
         HeavyAnimal hippo = new Hippo();
