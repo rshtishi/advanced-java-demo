@@ -1,8 +1,6 @@
-import inheritance.Elephant;
-import inheritance.HeavyAnimal;
-import inheritance.Hippo;
+package inheritance;
 
-public class MainExample {
+public class InheritanceExample {
 
     public static void main(String[] args){
         HeavyAnimal hippo = new Hippo();
