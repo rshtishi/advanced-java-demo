@@ -25,6 +25,4 @@ public class NestedMain {
         System.out.println();
     }
 
-    private static class StaticInner {
-    }
 }
