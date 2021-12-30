@@ -1,5 +1,7 @@
 package generics;
 
+import sun.java2d.pipe.SpanShapeRenderer;
+
 import java.io.File;
 
 public class GenericExample {
@@ -43,7 +45,13 @@ public class GenericExample {
         MultipleBoundedGeneric<CreditCardPayment> ccMultipleBoundedGeneric = new MultipleBoundedGeneric<CreditCardPayment>(new CreditCardPayment());
         ccMultipleBoundedGeneric.execute();
 
-
+        //Wildcards
+        System.out.println("\n WildCards");
+        SimpleGeneric<Object> wildCardEx1 = new SimpleGeneric<>(new String());  //correct
+        SimpleGeneric<String> wildCardEx2 = new SimpleGeneric<>(new String());  //correct
+        //SimpleGeneric<Object> wildCardEx3 = wildCardEx2;  //Incorrect
+        SimpleGeneric<?> wildCardEx3 = wildCardEx1;
+        wildCardEx3 = wildCardEx2;
 
     }
 
