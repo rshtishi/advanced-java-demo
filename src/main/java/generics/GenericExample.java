@@ -22,18 +22,28 @@ public class GenericExample {
         fileGeneric.printType();
 
         //Bounded Type Parameters in methods
-        System.out.println("\n  Bounded Type Paramters in methods");
+        System.out.println("\n  Bounded Type Paramter in methods");
         System.out.println("Max:" + findMaximum(new Integer(1), new Integer(2)));
         System.out.println("Max:" + findMaximum("Rando", "Shtishi"));
 
         //Bounded Type Parameter in class
-        System.out.println("\n  Bounded Type Parameters in classes");
+        System.out.println("\n  Bounded Type Parameter in classes");
         BoundedGeneric<PaypalPayment> paypalBoundedGeneric = new BoundedGeneric<>(new PaypalPayment());
         paypalBoundedGeneric.execute();
         BoundedGeneric<StripePayment> stripeBoundedGeneric = new BoundedGeneric<>(new StripePayment());
         stripeBoundedGeneric.execute();
 
-        //Multiple Bounds for Type Parameter
+        //Multiple Bounds for Type Parameters in methods
+        System.out.println("\n  Multiple Bounded Type Parameters in methods");
+        System.out.println("Max: " + findMaximum(1, 2, 3));
+        System.out.println("Max: " + findMaximum(1.5, 2.5, 3.5));
+
+        //Multiple Bounds for Type Parameters in classes
+        System.out.println("\n Multiple Bounded Type Parameters in classes");
+        MultipleBoundedGeneric<CreditCardPayment> ccMultipleBoundedGeneric = new MultipleBoundedGeneric<CreditCardPayment>(new CreditCardPayment());
+        ccMultipleBoundedGeneric.execute();
+
+
 
     }
 
@@ -49,6 +59,17 @@ public class GenericExample {
             return a;
         }
         return a.compareTo(b) > 0 ? a : b;
+    }
+
+    public static <T extends Number & Comparable<T>> T findMaximum(T a, T b, T c) {
+        T max = a;
+        if (b.compareTo(max) > 0) {
+            max = b;
+        }
+        if (c.compareTo(max) > 0) {
+            max = c;
+        }
+        return max;
     }
 
 
