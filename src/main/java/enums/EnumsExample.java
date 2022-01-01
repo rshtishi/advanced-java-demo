@@ -31,5 +31,8 @@ public class EnumsExample extends Object {
             System.out.println(country.ordinal() + " - " + country.name() + " - " + country.getPopulationDensity());
         }
 
+        BankOpeningHours bankOpeningHours = BankOpeningHours.FRIDAY;
+        bankOpeningHours.printOpeningHours();
+
     }
 }
