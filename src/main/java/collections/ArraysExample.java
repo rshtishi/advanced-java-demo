@@ -52,5 +52,23 @@ public class ArraysExample {
             System.out.println();
         }
 
+        //copying an array
+        System.out.println();
+        char[] name = {'J','o','h','n'};
+        //shallow copy
+        System.out.println("Shallow Copy");
+        char[] copyOfName = name;
+        copyOfName[3]='y';
+        System.out.println(name);
+        System.out.println(copyOfName);
+
+        //deep copy
+        System.out.println("Deep Copy");
+        char[] deepCopyOfName = new char[name.length];
+        System.arraycopy(name,0,deepCopyOfName,0,name.length);
+        deepCopyOfName[3]='n';
+        System.out.println(name);
+        System.out.println(deepCopyOfName);
+
     }
 }
