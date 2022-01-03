@@ -5,7 +5,6 @@ import java.io.*;
 public class IOStreamsExample {
 
     public static void main(String[] args) {
-        System.out.println("Hello World");
         File source = new File("src/main/resources/file-test.txt");
         File destination = new File("src/main/resources/test/test2");
         copy(source, destination);
