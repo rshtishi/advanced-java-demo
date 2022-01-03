@@ -32,6 +32,7 @@ public class FileReadeWriterExample {
         try(BufferedWriter writer= new BufferedWriter(new FileWriter(destination))){
             for(String line:data){
                 writer.write(line);
+                writer.newLine();
             }
             System.out.println("The data were sucessfully written in file");
         } catch (IOException e) {
