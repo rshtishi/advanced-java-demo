@@ -6,6 +6,11 @@ public class VmiExample {
         feed(new Cow());
         feed(new Bird());
         feed(new Lion());
+
+        System.out.println();
+
+        fly(new Bird());
+        fly(new Pigeon());
     }
 
     public static void feed(Animal animal){
@@ -13,4 +18,15 @@ public class VmiExample {
         animal.feed();
         System.out.println();
     }
+
+
+    public static void fly(Flyable flyable){
+        flyable.fly();
+        if(flyable instanceof Pigeon){
+            Pigeon pigeon = (Pigeon) flyable;
+            pigeon.specialMethod();
+        }
+    }
+
+
 }
