@@ -49,6 +49,11 @@ public class NestedMain {
         System.out.println(book2);
         System.out.println(book3);
 
+        System.out.println();
+        Salary salary = new Salary();
+        System.out.println(salary.calculateTaxes());
+
+
     }
 
 }
