@@ -27,6 +27,10 @@ public class NestedMain {
 
         Course course = new Course();
         course.print();
+
+        System.out.println();
+        Company.Receipt receipt = new Company("OSHE").new Receipt(45);
+        receipt.print();
     }
 
 }
