@@ -3,6 +3,7 @@ package nested;
 public class NestedMain {
 
     public static void main(String[] args) {
+
         Outer outer = new Outer();
         outer.callInner();
 
@@ -23,6 +24,9 @@ public class NestedMain {
         staticInner.print();
 
         System.out.println();
+
+        Course course = new Course();
+        course.print();
     }
 
 }

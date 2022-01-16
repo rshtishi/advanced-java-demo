@@ -5,7 +5,7 @@ public class OverridingExample {
     public static void main(String[] args) {
         //toString
         Person person = new Person();
-        System.out.println(person);
+        System.out.println(person.toString());
 
         Employee employee = new Employee();
         System.out.println(employee);
