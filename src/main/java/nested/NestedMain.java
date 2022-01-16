@@ -1,5 +1,7 @@
 package nested;
 
+import java.time.LocalDateTime;
+
 public class NestedMain {
 
     public static void main(String[] args) {
@@ -53,6 +55,56 @@ public class NestedMain {
         Salary salary = new Salary();
         System.out.println(salary.calculateTaxes());
 
+        Event event = new Event() {
+
+            @Override
+            public void schedule(String name) {
+                System.out.println(name+ " is scheduled "+ LocalDateTime.now());
+            }
+        };
+
+        event.schedule("Java Advanced");
+
+        System.out.println();
+
+        System.out.println();
+
+        Flyable flyable = new Flyable(){
+            @Override
+            public void fly() {
+                System.out.println("Pigeon fly");
+            }
+        };
+
+        flyable.fly();
+
+        System.out.println();
+        System.out.println();
+
+        Button button1 = new Button();
+        Button button2 = new Button();
+
+        button1.click(new Action(){
+            @Override
+            public void execute() {
+                for(int i=0;i<5;i++){
+                    System.out.print(" * ");
+                }
+            }
+        });
+        System.out.println("\n");
+        button2.click(new Action(){
+
+            @Override
+            public void execute() {
+                for(int i=0;i<5;i++){
+                    for(int j=0;j<5;j++){
+                        System.out.print(" * ");
+                    }
+                    System.out.println();
+                }
+            }
+        });
 
     }
 
