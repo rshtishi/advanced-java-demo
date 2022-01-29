@@ -13,9 +13,14 @@ import java.sql.SQLException;
  */
 public class ExceptionExample {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
 
-        Money money = new Money(-1,"");
+        try {
+            Money money = new Money(-1,"");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            throw e;
+        }
         //runtime exception
         System.out.println("  Arihmetic Exception");
         try {

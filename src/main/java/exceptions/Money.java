@@ -5,7 +5,7 @@ public class Money {
     private int amount;
     private String currency;
 
-    public Money(int amount, String currency) {
+    public Money(int amount, String currency) throws Exception {
         if (amount < 0) {
             throw new MoneyAmountException("Amount illegal exception");
         }

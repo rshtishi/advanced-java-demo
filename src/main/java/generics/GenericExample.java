@@ -3,16 +3,27 @@ package generics;
 import sun.java2d.pipe.SpanShapeRenderer;
 
 import java.io.File;
+import java.util.Arrays;
 
 public class GenericExample {
 
     public static void main(String[] args) {
+
+        CustomList<String> list = new CustomList<>(String.class,5);
+        list.add("4");
+        list.add("3");
+        list.print();
 
         //SimpleGenericMethod Examle
         System.out.println("  Simple Generic method");
         simpleGenericMethod("Rando");
         simpleGenericMethod(new Object());
         simpleGenericMethod(new File(""));
+
+        String[] strs = { "a","b","c"};
+        printGenericArray(strs);
+        Integer[] nums = {1,2,3};
+        printGenericArray(nums);
 
         //SimpleGeneric Example
         System.out.println("\n  SimpleGeneric class");
@@ -55,8 +66,14 @@ public class GenericExample {
 
     }
 
-    public static <T> void simpleGenericMethod(T param) {
+    public static <T,U> void simpleGenericMethod(T param) {
         System.out.println("Type: " + param.getClass().getName());
+    }
+
+    public static <T> void printGenericArray(T[] array){
+        for(T t:array){
+            System.out.println(t);
+        }
     }
 
     public static <T extends Comparable<T>> T findMaximum(T a, T b) {
