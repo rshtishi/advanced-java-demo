@@ -15,6 +15,7 @@ public class ExceptionExample {
 
     public static void main(String[] args) {
 
+        Money money = new Money(-1,"");
         //runtime exception
         System.out.println("  Arihmetic Exception");
         try {

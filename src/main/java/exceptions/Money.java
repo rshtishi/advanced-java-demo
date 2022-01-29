@@ -7,10 +7,10 @@ public class Money {
 
     public Money(int amount, String currency) {
         if (amount < 0) {
-            throw new MoneyAmountException();
+            throw new MoneyAmountException("Amount illegal exception");
         }
-        if (currency != null && !currency.isEmpty()) {
-            throw new MoneyCurrencyException();
+        if (currency == null  || currency.isEmpty()) {
+            throw new MoneyCurrencyException("Currency illegal exception");
         }
         this.amount = amount;
         this.currency = currency;
