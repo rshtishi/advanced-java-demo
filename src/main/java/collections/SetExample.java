@@ -1,17 +1,27 @@
 package collections;
 
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class SetExample {
 
     public static void main(String[] args) {
 
+        List<Grade> gradeList = new ArrayList<>();
+        gradeList.add(new Grade(5));
+        gradeList.add(new Grade(5));
+        gradeList.add(new Grade(5));
+
+        Set<Grade> gradeSet = new HashSet<>();
+        gradeSet.addAll(gradeList);
+        System.out.println(gradeList);
+        Iterator<Grade> gradeIterator = gradeSet.iterator();
+        while(gradeIterator.hasNext()){
+            System.out.println(gradeIterator.next());
+        }
+
         Set<String> stringSet = new HashSet<>();
         stringSet.add("John");
-        stringSet.add("Jim");
+        stringSet.add("Jimie");
         stringSet.add("Jack");
         stringSet.add("Jack");
         System.out.println(stringSet);
