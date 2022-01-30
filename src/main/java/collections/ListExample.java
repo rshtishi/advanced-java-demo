@@ -6,6 +6,22 @@ public class ListExample {
 
     public static void main(String[] args){
 
+        List<Person> personList = new ArrayList<>();
+        personList.add(new Person("Rando"));
+        personList.add(new Person("Roland"));
+        personList.add(new Person("Misen"));
+
+        Iterator<Person> personIterator = personList.listIterator();
+        while(personIterator.hasNext()){
+            System.out.println(personIterator.next());
+        }
+
+        personList.remove(new Person("rando"));
+        System.out.println("\n");
+        for(Person person: personList){
+            System.out.println(person);
+        }
+
         List<Integer> integerList = new ArrayList<>();
         integerList.add(1);
         integerList.add(2);
