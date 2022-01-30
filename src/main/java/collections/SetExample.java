@@ -26,7 +26,12 @@ public class SetExample {
         stringSet.add("Jack");
         System.out.println(stringSet);
 
-        Set<String> stringTreeSet = new TreeSet<>();
+        Set<String> stringTreeSet = new TreeSet<>(new Comparator<String>(){
+            @Override
+            public int compare(String o1, String o2) {
+                return o2.compareTo(o1);
+            }
+        });
         stringTreeSet.add("John");
         stringTreeSet.add("Jim");
         stringTreeSet.add("Jack");
