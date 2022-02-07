@@ -26,16 +26,12 @@ public class SetExample {
         stringSet.add("Jack");
         System.out.println(stringSet);
 
-        Set<String> stringTreeSet = new TreeSet<>(new Comparator<String>(){
-            @Override
-            public int compare(String o1, String o2) {
-                return o2.compareTo(o1);
-            }
-        });
+        Set<String> stringTreeSet = new TreeSet<>(new ReverseStringComparator());
         stringTreeSet.add("John");
         stringTreeSet.add("Jim");
         stringTreeSet.add("Jack");
         stringTreeSet.add("Jack");
+        stringTreeSet.add("Arben");
         System.out.println(stringTreeSet);
 
         Set<String> stringLinkedHashSet = new LinkedHashSet<>();

@@ -6,8 +6,11 @@ public class BuiltInInterfacesExample {
 
     public static void main(String[] args) {
 
-        Supplier<String> supplier = () -> "Rando";
+        Supplier<String> supplier = () -> { return "Rando";};
         System.out.println("Supplier: " + supplier.get());
+
+        Supplier<Integer> integerSupplier = () -> 5;
+        System.out.println("Supplier Integer: "+integerSupplier.get());
 
         System.out.println("\nConsumer");
         Consumer<Integer> consumer = (a) -> System.out.println("Square Area: " + (a * a));

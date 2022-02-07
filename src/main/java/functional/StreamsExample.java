@@ -29,7 +29,7 @@ public class StreamsExample {
         //terminal operation
         System.out.println("Count: " + empty.count());
         multiple.forEach(System.out::println);
-        System.out.println("Min: " + list.stream().min(Integer::compareTo));
+        System.out.println("Min: " + list.stream().min((a,b)->a.compareTo(b)));
         System.out.println("Max: " + list.stream().max(Integer::compareTo));
         System.out.println("Find Any: " + list.stream().findAny());
         System.out.println("Find First: " + list.stream().findFirst());
