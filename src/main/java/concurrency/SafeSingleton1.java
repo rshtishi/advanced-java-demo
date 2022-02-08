@@ -1,17 +1,17 @@
 package concurrency;
 
-public class UnsafeSingleton {
+public class SafeSingleton1 {
 
-    public static UnsafeSingleton instance = null;
+    private static SafeSingleton1 instance;
 
-    private UnsafeSingleton() {
+    private SafeSingleton1(){
     }
 
-    public static UnsafeSingleton getInstance() {
+    public static synchronized SafeSingleton1 getInstance() {
         if (instance == null) {
             delay();
-            System.out.println("UnsafeSingleton object Created...");
-            instance = new UnsafeSingleton();
+            System.out.println("SafeSingleton1 object Created...");
+            instance = new SafeSingleton1();
         }
         return instance;
     }

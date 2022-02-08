@@ -9,6 +9,7 @@ public class RaceConditionExample {
             public void run() {
                 for (int index = 0; index < 10; index++) {
                     UnsafeSingleton instance = UnsafeSingleton.getInstance();
+                    SafeSingleton1 instance1 = SafeSingleton1.getInstance();
                 }
             }
         });
@@ -16,8 +17,9 @@ public class RaceConditionExample {
         Thread thread2 = new Thread(new Runnable() {
             @Override
             public void run() {
-                for(int index=0;index<10;index++){
+                for (int index = 0; index < 10; index++) {
                     UnsafeSingleton instance = UnsafeSingleton.getInstance();
+                    SafeSingleton1 instance1 = SafeSingleton1.getInstance();
                 }
             }
         });
@@ -25,12 +27,12 @@ public class RaceConditionExample {
         Thread thread3 = new Thread(new Runnable() {
             @Override
             public void run() {
-                for(int index=0;index<10;index++){
+                for (int index = 0; index < 10; index++) {
                     UnsafeSingleton instance = UnsafeSingleton.getInstance();
+                    SafeSingleton1 instance1 = SafeSingleton1.getInstance();
                 }
             }
         });
-
 
 
         thread1.start();
