@@ -5,7 +5,7 @@ public class LongWrapper {
     private long value;
 
     public void increment() {
-        this.value++;
+        value++;
     }
 
     public long getValue() {
