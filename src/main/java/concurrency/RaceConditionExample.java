@@ -10,6 +10,8 @@ public class RaceConditionExample {
                 for (int index = 0; index < 10; index++) {
                     UnsafeSingleton instance = UnsafeSingleton.getInstance();
                     SafeSingleton1 instance1 = SafeSingleton1.getInstance();
+                    SafeSingleton2 instance2 = SafeSingleton2.getInstance();
+                    SingletonEnum instance3 = SingletonEnum.INSTANCE;
                 }
             }
         });
@@ -20,6 +22,8 @@ public class RaceConditionExample {
                 for (int index = 0; index < 10; index++) {
                     UnsafeSingleton instance = UnsafeSingleton.getInstance();
                     SafeSingleton1 instance1 = SafeSingleton1.getInstance();
+                    SafeSingleton2 instance2 = SafeSingleton2.getInstance();
+                    SingletonEnum instance3 = SingletonEnum.INSTANCE;
                 }
             }
         });
@@ -30,10 +34,11 @@ public class RaceConditionExample {
                 for (int index = 0; index < 10; index++) {
                     UnsafeSingleton instance = UnsafeSingleton.getInstance();
                     SafeSingleton1 instance1 = SafeSingleton1.getInstance();
+                    SafeSingleton2 instance2 = SafeSingleton2.getInstance();
+                    SingletonEnum instance3 = SingletonEnum.INSTANCE;
                 }
             }
         });
-
 
         thread1.start();
         thread2.start();
