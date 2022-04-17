@@ -4,12 +4,24 @@ import java.util.concurrent.Callable;
 
 public class Producer {
 
-    public static void produce() {
+    public void produce() {
         while (CustomBuffer.isFull()) {
-            System.out.println("Waiting to produce, thread: " + Thread.currentThread().getName());
         }
-        System.out.println("Producing, thread: " + Thread.currentThread().getName());
         CustomBuffer.add();
+    }
+
+    public void synchronizedProduce() {
+        synchronized (CustomBuffer.lock) {
+            if (CustomBuffer.isFull()) {
+                try {
+                    CustomBuffer.lock.wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            CustomBuffer.add();
+            CustomBuffer.lock.notifyAll();
+        }
     }
 
 }

@@ -1,6 +1,6 @@
 package concurrency;
 
-public class ProducerConsumerEx1 {
+public class ProducerConsumerEx2 {
 
     public static void main(String[] args) throws InterruptedException {
 
@@ -11,7 +11,7 @@ public class ProducerConsumerEx1 {
             @Override
             public void run() {
                 for (int i = 0; i < 50; i++) {
-                    producer.produce();
+                    producer.synchronizedProduce();
                 }
                 System.out.println("Done producing...");
             }
@@ -21,7 +21,7 @@ public class ProducerConsumerEx1 {
             @Override
             public void run() {
                 for (int i = 0; i < 50; i++) {
-                    consumer.consume();
+                    consumer.synchronizedConsume();
                 }
                 System.out.println("Done consuming...");
             }
@@ -35,5 +35,9 @@ public class ProducerConsumerEx1 {
         consumeThread.join();
 
         System.out.println("Custom Buffer Index: "+CustomBuffer.index);
+
+        for(int i=0;i<CustomBuffer.SIZE;i++){
+            System.out.print(CustomBuffer.value(i));
+        }
     }
 }
