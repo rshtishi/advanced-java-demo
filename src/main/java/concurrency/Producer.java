@@ -24,4 +24,17 @@ public class Producer {
         }
     }
 
+    public void safeProduce() throws InterruptedException {
+        try {
+            CustomBuffer.reentrantLock.lock();
+            while (CustomBuffer.isFull()) {
+                CustomBuffer.isFull.await();
+            }
+            CustomBuffer.add();
+            CustomBuffer.isEmpty.signalAll();
+        } finally {
+            CustomBuffer.reentrantLock.unlock();
+        }
+    }
+
 }

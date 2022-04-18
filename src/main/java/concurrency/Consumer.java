@@ -8,7 +8,7 @@ public class Consumer {
         CustomBuffer.remove();
     }
 
-    public static void synchronizedConsume() {
+    public void synchronizedConsume() {
         synchronized (CustomBuffer.lock) {
             if (CustomBuffer.isEmpty()) {
                 try {
@@ -19,6 +19,19 @@ public class Consumer {
             }
             CustomBuffer.remove();
             CustomBuffer.lock.notifyAll();
+        }
+    }
+
+    public void safeConsume() throws InterruptedException {
+        try {
+            CustomBuffer.reentrantLock.lock();
+            while (CustomBuffer.isEmpty()) {
+                CustomBuffer.isEmpty.await();
+            }
+            CustomBuffer.remove();
+            CustomBuffer.isFull.signalAll();
+        } finally {
+            CustomBuffer.reentrantLock.unlock();
         }
     }
 }
