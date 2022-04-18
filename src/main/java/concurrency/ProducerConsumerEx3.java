@@ -7,24 +7,18 @@ public class ProducerConsumerEx3 {
         Producer producer = new Producer();
         Consumer consumer = new Consumer();
 
-        Runnable produceTask = new Runnable() {
-            @Override
-            public void run() {
-                for (int i = 0; i < 50; i++) {
-                    producer.produce();
-                }
-                System.out.println("Done producing...");
+        Runnable produceTask = () -> {
+            for (int i = 0; i < 50; i++) {
+                producer.produce();
             }
+            System.out.println("Done producing...");
         };
 
-        Runnable consumeTask = new Runnable() {
-            @Override
-            public void run() {
-                for (int i = 0; i < 50; i++) {
-                    consumer.consume();
-                }
-                System.out.println("Done consuming...");
+        Runnable consumeTask = () -> {
+            for (int i = 0; i < 50; i++) {
+                consumer.consume();
             }
+            System.out.println("Done consuming...");
         };
 
         Thread produceThread = new Thread(produceTask);
