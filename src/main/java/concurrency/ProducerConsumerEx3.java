@@ -9,14 +9,22 @@ public class ProducerConsumerEx3 {
 
         Runnable produceTask = () -> {
             for (int i = 0; i < 50; i++) {
-                producer.produce();
+                try {
+                    producer.safeProduce();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
             System.out.println("Done producing...");
         };
 
         Runnable consumeTask = () -> {
             for (int i = 0; i < 50; i++) {
-                consumer.consume();
+                try {
+                    consumer.safeConsume();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
             System.out.println("Done consuming...");
         };
