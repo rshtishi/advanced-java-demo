@@ -25,6 +25,15 @@ public class ExecutorExample {
             e.printStackTrace();
         }
 
+        Callable<String> task4 = () -> {
+            throw new IllegalStateException("Exception thrown on thread"+ Thread.currentThread().getName());
+        };
+        Future<String> result3 = singleThreadExecutor.submit(task4);
+         try{
+             result3.get();
+         } catch(Exception e){
+             e.printStackTrace();
+         }
         singleThreadExecutor.shutdown();
     }
 }
