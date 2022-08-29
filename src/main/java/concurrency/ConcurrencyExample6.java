@@ -2,7 +2,7 @@ package concurrency;
 
 import java.util.concurrent.*;
 
-public class ExecutorExample {
+public class ConcurrencyExample6 {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         ExecutorService singleThreadExecutor = Executors.newSingleThreadExecutor();
@@ -37,16 +37,16 @@ public class ExecutorExample {
 
         // Callable Examples
         Callable<String> task2 = () -> "Hello Rando";
-        Future<String> result = singleThreadExecutor.submit(task2);
-        System.out.println(result.get());
+        Future<String> result2 = singleThreadExecutor.submit(task2);
+        System.out.println(result2.get());
 
         Callable<String> task3 = () -> {
             Thread.sleep(500);
             return "Hello " + Thread.currentThread().getName();
         };
-        Future<String> result2 = singleThreadExecutor.submit(task3);
+        Future<String> result3 = singleThreadExecutor.submit(task3);
         try {
-            System.out.println(result2.get(100, TimeUnit.MILLISECONDS));
+            System.out.println(result3.get(100, TimeUnit.MILLISECONDS));
         } catch (TimeoutException e) {
             e.printStackTrace();
         }
@@ -54,9 +54,9 @@ public class ExecutorExample {
         Callable<String> task4 = () -> {
             throw new IllegalStateException("Exception thrown on thread" + Thread.currentThread().getName());
         };
-        Future<String> result3 = singleThreadExecutor.submit(task4);
+        Future<String> result4 = singleThreadExecutor.submit(task4);
         try {
-            result3.get();
+            result4.get();
         } catch (Exception e) {
             e.printStackTrace();
         }
