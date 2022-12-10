@@ -2,6 +2,6 @@ package nested;
 
 public interface Fee {
 
-    public double apply(double amount);
+    double apply(double amount);
 
 }

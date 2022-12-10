@@ -1,6 +1,8 @@
 package nested;
 
-public class Book {
+import java.io.Serializable;
+
+public class Book  {
 
     private String title;
     private String author;

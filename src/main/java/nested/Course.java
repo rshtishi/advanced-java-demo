@@ -6,33 +6,50 @@ import java.util.List;
 public class Course {
 
     private String name;
-    private List<Student> students;
+    private Student[] students;
+    private int index;
 
-
-    public Course(){
+    public Course() {
         this.name = "Java Advanced";
-        this.students = new ArrayList<>();
-        this.students.add(new Student("John","10"));
-        this.students.add(new Student("Jim","10"));
-        this.students.add(new Student("Mary","10"));
+        students = new Student[5];
+        index = 0;
     }
 
-    public void print(){
-        for(Student student: students){
-            student.print();
+    public void register(String name, String grade) {
+        if (index >= 5) {
+            System.out.println("Cannot register student, course is full!");
+            return;
+        }
+        students[index] = new Student(name, grade);
+        index++;
+    }
+
+    public void print() {
+        for (Student student : students) {
+            System.out.println(student);
         }
     }
 
     private class Student {
+
         private String name;
         private String grade;
+
         public Student(String name, String grade) {
             this.name = name;
             this.grade = grade;
         }
 
-        public void print() {
-            System.out.println(this.name+" "+grade+" "+Course.this.name);
+        @Override
+        public String toString() {
+            StringBuilder sb = new StringBuilder(getClass().getSimpleName());
+            sb.append("{ name:")
+                    .append(this.name)
+                    .append(", grade: ")
+                    .append(grade)
+                    .append("}");
+            return sb.toString();
         }
+
     }
 }

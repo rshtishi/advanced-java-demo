@@ -4,34 +4,60 @@ import java.time.LocalDateTime;
 
 public class NestedMain {
 
+
     public static void main(String[] args) {
 
         Outer outer = new Outer();
-        outer.callInner();
-
-        System.out.println();
-
-        Outer.Inner inner = outer.new Inner();
+        Outer.Inner inner = new Outer().new Inner();
         inner.go();
-
-        System.out.println();
-
-        System.out.println(outer.callLocalInner(2));
-
-        System.out.println();
-
-        System.out.println(outer.callLocalInnerAnonymous(5.0, 1.0));
+        outer.callInner();
 
         Outer.StaticInner staticInner = new Outer.StaticInner();
         staticInner.print();
 
-        System.out.println();
+        System.out.println(outer.callLocalInner(3));
+
+        Flyable flyable = new Flyable() {
+            @Override
+            public void fly() {
+                System.out.println("Pigeon fly");
+            }
+        };
+
+        flyable.fly();
+
+        Fee fee = new Fee() {
+            @Override
+            public double apply(double amount) {
+                amount = amount - (amount * 0.2);
+                return amount;
+            }
+        };
+        System.out.println(fee.apply(10));
+        System.out.println(outer.callLocalInnerAnonymous(5.0, 1.0));
+
 
         Course course = new Course();
+        course.register("Greta","A");
+        course.register("Klest","A");
+        course.register("Ikmet","A");
+        course.register("Kevin","A");
+        course.register("Elvian","A");
+        course.register("Krisel","A");
         course.print();
 
-        System.out.println();
-        Company.Receipt receipt = new Company("OSHE").new Receipt(45);
+        /*
+
+
+
+
+
+
+
+
+
+
+
         receipt.print();
 
         //Book book =
@@ -69,12 +95,7 @@ public class NestedMain {
 
         System.out.println();
 
-        Flyable flyable = new Flyable(){
-            @Override
-            public void fly() {
-                System.out.println("Pigeon fly");
-            }
-        };
+
 
         flyable.fly();
 
@@ -105,6 +126,8 @@ public class NestedMain {
                 }
             }
         });
+        */
+
 
     }
 
