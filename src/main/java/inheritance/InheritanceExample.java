@@ -10,6 +10,9 @@ public class InheritanceExample {
         HeavyAnimal animal = new Elephant();
         animal.feed();
 
+        Hippo hippoo = new Hippo();
+        hippoo.feed();
+
         HeavyAnimal hippo = new Hippo();
         boolean isHippoAnHeavyAnimal = hippo instanceof HeavyAnimal; //true
         boolean isHippo = hippo instanceof  Hippo; //true
