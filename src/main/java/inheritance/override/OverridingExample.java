@@ -4,11 +4,15 @@ public class OverridingExample {
 
     public static void main(String[] args) {
         //toString
-        Person person = new Person();
-        System.out.println(person.toString());
+        Person person = new Person("Rando",30);
+        Person person2 = new Person("rando", 30);
+        System.out.println(person==person2);
+        System.out.println(person.equals(person2));
+
 
         Employee employee = new Employee();
-        System.out.println(employee);
+        employee.setEmail("rs@gmail.com");
+        System.out.println(employee.toString());
 
         //Equals
         Employee employee1 = new Employee();
@@ -23,5 +27,7 @@ public class OverridingExample {
 
         //hashcode
         System.out.println(employee1.hashCode());
+
+
     }
 }
