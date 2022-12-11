@@ -2,5 +2,5 @@ package enums;
 
 public enum Season {
 
-    WINTER, SPRING, SUMMER, AUTUMN;
+    SPRING, SUMMER, AUTUMN,WINTER;
 }

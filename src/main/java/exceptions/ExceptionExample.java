@@ -13,14 +13,38 @@ import java.sql.SQLException;
  */
 public class ExceptionExample {
 
-    public static void main(String[] args) throws Exception{
+    public static double balance;
 
-        try {
-            Money money = new Money(-1,"");
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            throw e;
+    public static void withdrawMoney(double amount){
+        if(amount<0){
+            throw new IllegalArgumentException("Invalid amount, amount cannot be negative");
         }
+        if(balance-amount<0){
+            throw new IllegalStateException("Not enought credit in you account");
+        }
+
+    }
+
+    public static void main(String[] args) throws Exception {
+
+        System.out.println("Hello 1");
+        try{
+            withdrawMoney(5);
+        } catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+
+        try{
+            Student student = new Student("Rando",2);
+        } catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+
+        System.out.println("Hello 2");
+
+        /*
+        Money money = new Money(5, "");
+
         //runtime exception
         System.out.println("  Arihmetic Exception");
         try {
@@ -58,6 +82,8 @@ public class ExceptionExample {
         } catch (SQLException | UnsupportedOperationException e) {
             System.out.println("Error:" + e.getMessage());
         }
+
+         */
 
     }
 
