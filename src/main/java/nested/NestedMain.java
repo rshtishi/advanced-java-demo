@@ -1,6 +1,5 @@
 package nested;
 
-import java.time.LocalDateTime;
 
 public class NestedMain {
 
@@ -38,91 +37,44 @@ public class NestedMain {
 
 
         Course course = new Course();
-        course.register("Greta","A");
-        course.register("Klest","A");
-        course.register("Ikmet","A");
-        course.register("Kevin","A");
-        course.register("Elvian","A");
-        course.register("Krisel","A");
+        course.register("Greta", "A");
+        course.register("Klest", "A");
+        course.register("Ikmet", "A");
+        course.register("Kevin", "A");
+        course.register("Elvian", "A");
+        course.register("Krisel", "A");
         course.print();
 
-        Book book = new Book.Builder("3 shoket","Remark")
+        Book book = new Book.Builder("3 shoket", "Remark")
                 .description("Best book ever")
                 .isbn("454545")
                 .build();
         System.out.println(book);
 
-        /*
-
-        receipt.print();
-
-        //Book book =
-        Book.Builder builder = new Book.Builder("Mizantrop", "Balzak")
-                .isbn("454545");
-        Book book1 = builder.genre("Classic").build();
-
-        Book book = new Book.Builder("","").build();
-
-        Book book2 = new Book.Builder("Metamorfoza", "Franz Kafka").build();
-
-        Book book3 = new Book.Builder("Huaji", "Albert Kamy")
-                .published("2020").build();
-
-        System.out.println();
-        System.out.println(book1);
-        System.out.println(book2);
-        System.out.println(book3);
-
-        System.out.println();
-        Salary salary = new Salary();
+        Salary salary = new Salary(1000);
         System.out.println(salary.calculateTaxes());
 
-        Event event = new Event() {
-
-            @Override
-            public void schedule(String name) {
-                System.out.println(name+ " is scheduled "+ LocalDateTime.now());
-            }
-        };
-
-        event.schedule("Java Advanced");
-
-        System.out.println();
-
-        System.out.println();
-
-
-
-        flyable.fly();
-
-        System.out.println();
-        System.out.println();
-
-        Button button1 = new Button();
-        Button button2 = new Button();
-
-        button1.click(new Action(){
+        Button button = new Button();
+        button.click(new HelloAction());
+        button.click(new Action(){
             @Override
             public void execute() {
-                for(int i=0;i<5;i++){
-                    System.out.print(" * ");
-                }
+                System.out.println("Hello from anonym class object");
             }
         });
-        System.out.println("\n");
-        button2.click(new Action(){
 
+        button.click(new Action() {
             @Override
             public void execute() {
-                for(int i=0;i<5;i++){
+                for(int i=0;i<5;i++)
+                {
                     for(int j=0;j<5;j++){
-                        System.out.print(" * ");
+                        System.out.print("* ");
                     }
                     System.out.println();
                 }
             }
         });
-        */
 
 
     }
