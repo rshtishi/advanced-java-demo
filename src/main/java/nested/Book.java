@@ -1,7 +1,5 @@
 package nested;
 
-import java.io.Serializable;
-
 public class Book  {
 
     private String title;
@@ -14,6 +12,7 @@ public class Book  {
 
     @Override
     public String toString() {
+
         final StringBuilder sb = new StringBuilder("Book{");
         sb.append("title='").append(title).append('\'');
         sb.append(", author='").append(author).append('\'');
@@ -77,17 +76,17 @@ public class Book  {
         this.title = builder.title;
         this.author = builder.author;
         this.isbn = builder.isbn;
-        this.published = builder.published;
         this.genre = builder.genre;
+        this.published = builder.published;
         this.description = builder.description;
     }
+
 
 
     public static class Builder {
 
         private String title;
         private String author;
-
         private String isbn;
         private String genre;
         private String published;
@@ -95,7 +94,7 @@ public class Book  {
 
         public Builder(String title, String author){
             this.title = title;
-            this.author=author;
+            this.author = author;
         }
 
         public Builder isbn(String isbn){
@@ -121,6 +120,7 @@ public class Book  {
         public Book build(){
             return new Book(this);
         }
+
     }
 
 }

@@ -46,17 +46,13 @@ public class NestedMain {
         course.register("Krisel","A");
         course.print();
 
+        Book book = new Book.Builder("3 shoket","Remark")
+                .description("Best book ever")
+                .isbn("454545")
+                .build();
+        System.out.println(book);
+
         /*
-
-
-
-
-
-
-
-
-
-
 
         receipt.print();
 
