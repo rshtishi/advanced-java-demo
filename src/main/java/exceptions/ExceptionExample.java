@@ -1,5 +1,7 @@
 package exceptions;
 
+import inheritance.override.Person;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -25,8 +27,8 @@ public class ExceptionExample {
 
     }
 
-    public static void main(String[] args) throws Exception {
 
+    public static void main(String[] args) throws Exception {
         System.out.println("Hello 1");
         try{
             withdrawMoney(5);
@@ -35,22 +37,18 @@ public class ExceptionExample {
         }
 
         try{
-            Student student = new Student("Rando",2);
+            Student student = new Student(" ",2);
         } catch(Exception e){
             System.out.println(e.getMessage());
         }
 
         System.out.println("Hello 2");
-
-        /*
-        Money money = new Money(5, "");
-
-        //runtime exception
-        System.out.println("  Arihmetic Exception");
         try {
-            System.out.println(divide(5, 0));
-        } catch (ArithmeticException e) {
-            System.out.println("Error:" + e.getMessage());
+            Money money = new Money(-5, "");
+        } catch(IllegalArgumentException e){
+            System.out.println("******");
+        } catch(IllegalStateException e){
+            System.out.println("#####");
         }
 
         System.out.println("\n  Number Format Exception");
@@ -69,6 +67,7 @@ public class ExceptionExample {
         }
 
         //checked exception
+
         System.out.println("\n  IOException");
         try {
             String content = read("no-file");
@@ -77,15 +76,22 @@ public class ExceptionExample {
         }
 
         System.out.println("\n  UnsupportedOperationException");
+
         try {
             getDataFromDatabase();
         } catch (SQLException | UnsupportedOperationException e) {
             System.out.println("Error:" + e.getMessage());
         }
 
-         */
-
+        //custom exception
+        PersonService personService = new PersonService();
+        try {
+            personService.findByName("Rando");
+        } catch(PersonNotFoundException e){
+            System.out.println(e);
+        }
     }
+
 
     public static String getDataFromDatabase() throws SQLException {
         throw new UnsupportedOperationException();

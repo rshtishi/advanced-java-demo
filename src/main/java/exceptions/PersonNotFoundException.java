@@ -6,7 +6,9 @@ public class PersonNotFoundException extends Exception {
         super();
     }
 
+
     public PersonNotFoundException(String message) {
+
         super(message);
     }
 }

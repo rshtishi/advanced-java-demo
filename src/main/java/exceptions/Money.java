@@ -10,7 +10,7 @@ public class Money {
             throw new IllegalArgumentException("Amount illegal exception");
         }
         if (currency == null  || currency.isEmpty()) {
-            throw new IllegalArgumentException("Currency illegal exception");
+            throw new IllegalStateException("Currency illegal exception");
         }
         this.amount = amount;
         this.currency = currency;
