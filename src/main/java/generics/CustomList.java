@@ -8,6 +8,7 @@ public class CustomList<T> {
     private T[] array;
 
     public CustomList(Class<T> clazz,int size){
+
         array = (T[]) Array.newInstance(clazz, size); //new T[5]
     }
 
