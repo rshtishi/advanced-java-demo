@@ -19,7 +19,12 @@ public class SetExample {
             System.out.println(gradeIterator.next());
         }
 
-        Set<String> stringSet = new HashSet<>();
+        Set<String> stringSet = new TreeSet<>(new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return o1.compareTo(o2);
+            }
+        }.reversed());
         stringSet.add("John");
         stringSet.add("Jimie");
         stringSet.add("Jack");
