@@ -2,8 +2,12 @@ package inheritance;
 
 public class Elephant extends HeavyAnimal {
 
+    public void noise(){
+        System.out.println("Noise");
+    }
+
     @Override
-    public void feed() {
+    public void feed(){
         System.out.println("Feeding Elephant");
     }
 

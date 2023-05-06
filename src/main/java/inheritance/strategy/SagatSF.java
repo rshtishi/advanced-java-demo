@@ -5,6 +5,7 @@ public class SagatSF extends Fighter{
     public SagatSF(){
         punches.add(new TigerPunch());
         punches.add(new TigerUppercutPunch());
+        kicks.add(new TigerKick());
     }
 
     @Override

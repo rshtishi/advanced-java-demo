@@ -16,4 +16,5 @@ public class Go extends Game {
     void end() {
         System.out.println("Go Game Ended.");
     }
+
 }

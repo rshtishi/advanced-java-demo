@@ -7,6 +7,7 @@ public class Pigeon extends Animal implements Flyable{
         System.out.println("Eat Bread");
     }
 
+    @Override
     public void fly(){
         System.out.println("Pigeon Fly");
     }

@@ -5,6 +5,7 @@ public class RyuSF extends Fighter {
     public RyuSF(){
         punches.add(new DragonPunch());
         punches.add(new DragonUppercutPunch());
+        kicks.add(new DragonKick());
     }
 
     @Override

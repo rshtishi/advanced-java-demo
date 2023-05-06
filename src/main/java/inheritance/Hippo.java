@@ -6,4 +6,7 @@ public class Hippo extends HeavyAnimal {
     public void healthCheck() {
         System.out.println("Health Check Hippo");
     }
+
+
+
 }

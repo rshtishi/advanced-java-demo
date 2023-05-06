@@ -12,6 +12,8 @@ public class ListExample {
         personList.add(new Person("Misen"));
         personList.remove(new Person("Rando"));
 
+
+
         Iterator<Person> personIterator = personList.listIterator();
         while(personIterator.hasNext()){
             System.out.println(personIterator.next());
@@ -26,11 +28,11 @@ public class ListExample {
         List<Integer> integerList = new ArrayList<>();
         integerList.add(1);
         integerList.add(2);
-        integerList.add(2);
+        integerList.add(3);
         integerList.add(3);
 
         System.out.println(integerList);
-        integerList.removeAll(Arrays.asList(2));
+        integerList.remove(2);
         System.out.println(integerList);
 
         List<Integer> integerLinkedList = new LinkedList<>();

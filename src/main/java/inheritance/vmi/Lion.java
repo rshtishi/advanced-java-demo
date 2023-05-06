@@ -2,7 +2,9 @@ package inheritance.vmi;
 
 public class Lion extends Animal {
 
-    String name = "lion";
+    public Lion(){
+        super.name = "Lion";
+    }
 
     @Override
     public void feed() {

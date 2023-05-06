@@ -13,7 +13,7 @@ public class BuiltInInterfacesExample {
         System.out.println("Supplier Integer: "+integerSupplier.get());
 
         System.out.println("\nConsumer");
-        Consumer<Integer> consumer = (a) -> System.out.println("Square Area: " + (a * a));
+        Consumer<Integer> consumer = (Integer a) -> {System.out.println("Square Area: " + (a * a));};
         consumer.accept(10);
 
         System.out.println("\nBiConsumer");
@@ -29,7 +29,7 @@ public class BuiltInInterfacesExample {
         System.out.println(biPredicate.test("Rando", "Ra"));
 
         System.out.println("\nFunction");
-        Function<String, Integer> function = (s) -> s.length();
+        Function<String, Integer> function = (s) -> {return s.length();};
         System.out.println(function.apply("rando"));
 
         System.out.println("\nBiFunction");

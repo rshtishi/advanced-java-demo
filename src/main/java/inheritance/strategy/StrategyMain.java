@@ -8,5 +8,9 @@ public class StrategyMain {
 
         sagat.executeComboPunch();
         ryu.executeComboPunch();
+
+        sagat.executeComboKick();
+        ryu.executeComboKick();
+
     }
 }
