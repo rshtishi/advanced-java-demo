@@ -1,7 +1,6 @@
 package nested;
 
 public class Outer {
-
     private String greeting = "hey";
 
     public class Inner {

@@ -3,8 +3,13 @@ package nested;
 
 public class NestedMain {
 
-
     public static void main(String[] args) {
+
+        //Address address = new Address.Builder()
+                //.state("Albania")
+                //.city("Tirana")
+               // .build();
+        //System.out.println(address);
 
         Outer outer = new Outer();
         Outer.Inner inner = new Outer().new Inner();
@@ -44,6 +49,7 @@ public class NestedMain {
         course.register("Elvian", "A");
         course.register("Krisel", "A");
         course.print();
+
 
         Book book = new Book.Builder("3 shoket", "Remark")
                 .description("Best book ever")

@@ -4,8 +4,9 @@ public class OverridingExample {
 
     public static void main(String[] args) {
         //toString
-        Person person = new Person("Rando",30);
-        Person person2 = new Person("rando", 30);
+        Person person = new Person("Rando",30);//x1y
+        Person person2 = new Person("Rando", 30);//x2y
+        System.out.println(person);
         System.out.println(person==person2);
         System.out.println(person.equals(person2));
 
