@@ -1,6 +1,6 @@
 package inheritance.geometry;
 
-public class Circle implements Moveable{
+public class Circle implements Moveable, Resizable {
 
     private Point2D center;
     private Point2D point;
@@ -32,13 +32,21 @@ public class Circle implements Moveable{
     }
 
     @Override
-    public String toString(){
-        return String.format("Circle{center:%s,point:%s}",center.toString(),point.toString());
+    public String toString() {
+        return String.format("Circle{center:%s,point:%s}", center.toString(), point.toString());
     }
 
     @Override
-    public void move(MoveDirection moveDirection){
+    public void move(MoveDirection moveDirection) {
         center.move(moveDirection);
         point.move(moveDirection);
+    }
+
+    @Override
+    public void resize(double factor) {
+        double dx = point.getX() * factor - point.getX();
+        double dy = point.getY() * factor - point.getY();
+        point.move(new MoveDirection(dx, dy));
+        computeRadius();
     }
 }

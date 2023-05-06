@@ -14,5 +14,11 @@ public class GeometryMain {
         System.out.println(circle.getPerimeter());
         System.out.println(circle.getArea());
         System.out.println(circle);
+
+        circle.resize(2);
+        System.out.println(circle.getRadius());
+        System.out.println(circle.getPerimeter());
+        System.out.println(circle.getArea());
+        System.out.println(circle);
     }
 }
