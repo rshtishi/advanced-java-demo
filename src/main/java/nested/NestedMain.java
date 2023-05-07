@@ -5,11 +5,37 @@ public class NestedMain {
 
     public static void main(String[] args) {
 
-        //Address address = new Address.Builder()
-                //.state("Albania")
-                //.city("Tirana")
-               // .build();
-        //System.out.println(address);
+        Parcel parcel = new Parcel(60, 60, 60);
+        Validator validator = new ParcelValidator();
+        System.out.println(parcel);
+        System.out.println(validator.validate(parcel));
+
+        validator = new Validator() {
+            @Override
+            public boolean validate(Parcel parcel) {
+                // TO DO
+                // Add controls that check if parcel is valid or not
+                return false;
+            }
+        }
+        System.out.println(parcel);
+        System.out.println(validator.validate(parcel));
+        Button button2 = new Button();
+        button2.click(new HelloAction());
+        Action action = new Action() {
+
+            @Override
+            public void execute() {
+                System.out.println("Hello I am an anomous class");
+            }
+        };
+        button2.click(action);
+
+        Address address = new Address.Builder()
+                .state("Albania")
+                .city("Tirana")
+                .build();
+        System.out.println(address);
 
         Outer outer = new Outer();
         Outer.Inner inner = new Outer().new Inner();
@@ -62,7 +88,7 @@ public class NestedMain {
 
         Button button = new Button();
         button.click(new HelloAction());
-        button.click(new Action(){
+        button.click(new Action() {
             @Override
             public void execute() {
                 System.out.println("Hello from anonym class object");
@@ -72,9 +98,8 @@ public class NestedMain {
         button.click(new Action() {
             @Override
             public void execute() {
-                for(int i=0;i<5;i++)
-                {
-                    for(int j=0;j<5;j++){
+                for (int i = 0; i < 5; i++) {
+                    for (int j = 0; j < 5; j++) {
                         System.out.print("* ");
                     }
                     System.out.println();

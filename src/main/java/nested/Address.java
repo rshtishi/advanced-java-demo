@@ -81,17 +81,18 @@ public class Address {
         }
 
         public Builder Street(String street){
-            //TO DO
-            return null;
+            this.street = street;
+            return this;
         }
 
         public Builder building(String building){
-            //TO DO
-            return null;
+            this.building = building;
+            return this;
         }
 
         public Builder appartNo(String appartNo){
-            return null;
+            this.appartNo =appartNo;
+            return this;
         }
 
         public Address build(){
