@@ -13,11 +13,15 @@ public class NestedMain {
         validator = new Validator() {
             @Override
             public boolean validate(Parcel parcel) {
-                // TO DO
-                // Add controls that check if parcel is valid or not
-                return false;
+                if (parcel.getxLength() < 30 || parcel.getyLength() < 30 || parcel.getzLength() < 30) {
+                    return false;
+                }
+                if (Integer.sum(Integer.sum(parcel.getxLength(), parcel.getyLength()), parcel.getzLength()) > 300) {
+                    return false;
+                }
+                return true;
             }
-        }
+        };
         System.out.println(parcel);
         System.out.println(validator.validate(parcel));
         Button button2 = new Button();
