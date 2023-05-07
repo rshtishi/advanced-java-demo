@@ -4,9 +4,12 @@ public class EnumsExample extends Object {
 
     public static void main(String[] args) {
 
-        double meter = 15;
-        double yards = ConversionType.METER_TO_YARDS.convert(meter);
+        double yards = ConversionType.METER_TO_YARDS.convert(15);
         System.out.println(yards);
+        System.out.println(ConversionType.YARDS_TO_METER.convert(30));
+        System.out.println(ConversionType.CM_TO_INCHES.convert(30));
+        System.out.println(ConversionType.INCHES_TO_CM.convert(11));
+
 
         Season winter = Season.WINTER;
         System.out.println(winter == Season.WINTER);
