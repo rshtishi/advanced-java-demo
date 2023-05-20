@@ -50,6 +50,7 @@ public class ListExample {
         System.out.println(integerLinkedList);
         System.out.println(integerLinkedList.containsAll(integerList));
         System.out.println(integerLinkedList.contains(4));
+        System.out.println(integerLinkedList.indexOf(4));
 
         Iterator<Integer> iterator = integerLinkedList.listIterator();
         while(iterator.hasNext()){

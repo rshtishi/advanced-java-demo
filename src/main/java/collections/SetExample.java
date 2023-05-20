@@ -19,12 +19,7 @@ public class SetExample {
             System.out.println(gradeIterator.next());
         }
 
-        Set<String> stringSet = new TreeSet<>(new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                return o1.compareTo(o2);
-            }
-        }.reversed());
+        Set<String> stringSet = new TreeSet<>();
         stringSet.add("John");
         stringSet.add("Jimie");
         stringSet.add("Jack");
@@ -39,7 +34,7 @@ public class SetExample {
         stringTreeSet.add("Arben");
         System.out.println(stringTreeSet);
 
-        Set<String> stringLinkedHashSet = new LinkedHashSet<>();
+        Set<String> stringLinkedHashSet = new HashSet<>();
         stringLinkedHashSet.add("John");
         stringLinkedHashSet.add("Jim");
         stringLinkedHashSet.add("Jack");

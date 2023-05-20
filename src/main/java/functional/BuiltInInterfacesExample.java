@@ -9,7 +9,7 @@ public class BuiltInInterfacesExample {
         Supplier<String> supplier = () -> { return "Rando";};
         System.out.println("Supplier: " + supplier.get());
 
-        Supplier<Integer> integerSupplier = () -> 5;
+        Supplier<Integer> integerSupplier = () ->5;
         System.out.println("Supplier Integer: "+integerSupplier.get());
 
         System.out.println("\nConsumer");

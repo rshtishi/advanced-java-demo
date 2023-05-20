@@ -34,6 +34,9 @@ public class MapExample {
         for(Map.Entry<String,Integer> entry:ageNameSet){
             System.out.println(entry.getKey()+" : "+entry.getValue());
         }
+        for(String personName:ageByPersonName.keySet()){
+            System.out.println(personName+" -> "+ageByPersonName.get(personName));
+        }
 
         List<Integer> integerList = Arrays.asList(1,1,1,1,2,3,4,5);
         Map<Integer,Integer> frequencyByNumber = new HashMap<>();
