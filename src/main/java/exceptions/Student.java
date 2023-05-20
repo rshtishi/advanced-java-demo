@@ -1,12 +1,16 @@
 package exceptions;
 
+import java.util.Locale;
+
 public class Student {
 
     private String name;
     private int grade;
 
     public Student(String name, int grade){
-        if(name==null || name.isEmpty()){
+
+
+        if(name==null || name.trim().isEmpty()){
             throw new IllegalArgumentException("Name cannot be empty");
         }
         if(grade<4 || grade>10){

@@ -17,11 +17,14 @@ public class ExceptionExample {
 
     public static double balance;
 
-    public static void withdrawMoney(double amount){
-        if(amount<0){
+    public static void withdrawMoney(double amount) throws IOException {
+        if (amount < 0) {
+            throw new IOException();
+        }
+        if (amount < 0) {
             throw new IllegalArgumentException("Invalid amount, amount cannot be negative");
         }
-        if(balance-amount<0){
+        if (balance - amount < 0) {
             throw new IllegalStateException("Not enought credit in you account");
         }
 
@@ -29,25 +32,26 @@ public class ExceptionExample {
 
 
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello 1");
-        try{
-            withdrawMoney(5);
-        } catch(Exception e){
+
+        try {
+            withdrawMoney(-1);
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+        System.out.println("Hello 2");
 
-        try{
-            Student student = new Student(" ",2);
-        } catch(Exception e){
+        try {
+            Student student = new Student(" ", 2);
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
         System.out.println("Hello 2");
         try {
             Money money = new Money(-5, "");
-        } catch(IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             System.out.println("******");
-        } catch(IllegalStateException e){
+        } catch (IllegalStateException e) {
             System.out.println("#####");
         }
 
@@ -87,7 +91,7 @@ public class ExceptionExample {
         PersonService personService = new PersonService();
         try {
             personService.findByName("Rando");
-        } catch(PersonNotFoundException e){
+        } catch (PersonNotFoundException e) {
             System.out.println(e);
         }
     }

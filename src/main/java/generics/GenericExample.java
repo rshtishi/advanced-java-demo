@@ -73,8 +73,11 @@ public class GenericExample {
         //SimpleGeneric<Object> wildCardEx3 = wildCardEx2;  //Incorrect
         SimpleGeneric<?,?> wildCardEx3 = wildCardEx1;
         wildCardEx3 = wildCardEx2;
+        SimpleGeneric<?,?> wildCardEx4 = new SimpleGeneric<>(new File(""), new Exception(),"");
 
     }
+
+
 
     public static <T> void simpleGenericMethod(T param) {
         System.out.println("Type: " + param.getClass().getName());
