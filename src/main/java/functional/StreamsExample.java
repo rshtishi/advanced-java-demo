@@ -12,11 +12,12 @@ public class StreamsExample {
         Stream<String> empty = Stream.empty();
         Stream<Integer> single = Stream.of(1);
         Stream<Integer> multiple = Stream.of(1, 2, 3);
+
         List<Integer> list = Arrays.asList(1, 2, 3, 4);
         Stream<Integer> fromList = list.stream();
-        Stream<Double> randoms = Stream.generate(()->Math.random());
+        Stream<Double> randoms = Stream.generate(() -> Math.random());
         Stream<Integer> oddNumber = Stream.iterate(1, n -> n + 2);
-        Stream<Integer> duplicates = Stream.of(1,1,1,2,2,3,3,3,3);
+        Stream<Integer> duplicates = Stream.of(1, 1, 1, 2, 2, 3, 3, 3, 3);
 
         List<String> zero = Arrays.asList();
         List<String> one = Arrays.asList("Bonobo");
@@ -26,23 +27,24 @@ public class StreamsExample {
 
         //terminal operation
         System.out.println("Count: " + empty.count());
-        multiple.forEach(System.out::println);
-        System.out.println("Min: " + list.stream().min((a,b)->a.compareTo(b)));
+
+        multiple.forEach((i) -> System.out.println(i));
+        System.out.println("Min: " + list.stream().min((a, b) -> a.compareTo(b)));
         System.out.println("Max: " + list.stream().max(Integer::compareTo));
         System.out.println("Find Any: " + list.stream().findAny());
         System.out.println("Find First: " + list.stream().findFirst());
         System.out.println(fromList.reduce(0, (subtotal, element) -> subtotal += element));
-        Set<Integer> set = list.stream().collect(()-> new HashSet<>(),
-                (hashSet,i)->hashSet.add(i),
-                (resultSet,tempSet)-> resultSet.addAll(tempSet));
+        Set<Integer> set = list.stream().collect(() -> new HashSet<>(),
+                (hashSet, i) -> hashSet.add(i),
+                (resultSet, tempSet) -> resultSet.addAll(tempSet));
         System.out.println(set);
         list.stream().collect(Collectors.toList());
 
         //intermediate operation
-        System.out.println(list.stream().filter(a->a==2).findFirst());
+        System.out.println(list.stream().filter(a -> a == 2).findFirst());
         duplicates.distinct().forEach(System.out::println);
         System.out.println(oddNumber.skip(2).limit(5).collect(Collectors.toList()));
-        list.stream().map(a->a*a).forEach(System.out::println);
+        list.stream().map(a -> a * a).forEach(System.out::println);
 
         System.out.println(animals.flatMap(animal -> animal.stream()).collect(Collectors.toList()));
 
